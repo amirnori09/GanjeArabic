@@ -9,7 +9,9 @@ module.exports = {
     colors: {
       'yellow_custom': '#FDCB18',
       'primary_custom': '#5A4FCF',
+      'white_custom': '#FFFFFF',
       neutral: {
+        50: '#eee',
         100: '#f8f9fa',
         200: '#FFF'
       },
@@ -22,14 +24,23 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'hero-bg': "url('/images/bghome.png')",
       },
     },
     fontFamily: {
       sans: ['var(--font-dana)']
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  // daisyUI config (optional - here are the default values)
+  daisyui: {
+    themes: ['light'], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    base: true, // applies background color and foreground color for root element by default
+    styled: true, // include daisyUI colors and design decisions for all components
+    utils: true, // adds responsive and modifier utility classes
+    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
+    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
+    themeRoot: ":root", // The element that receives theme color CSS variables
+    rtl: true
+  },
 };

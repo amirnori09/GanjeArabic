@@ -1,6 +1,7 @@
 import { dana } from "@/utils/local_fonts";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
+import LayoutIndex from "@/app/components/layouts/LayoutIndex";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,7 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dana.variable} font-sans`}>{children}</body>
+      <body className={`${dana.variable} font-sans bg-neutral-50`}>
+        <LayoutIndex>
+          {children}
+        </LayoutIndex>
+      </body>
     </html>
   );
 }
